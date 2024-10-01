@@ -34,8 +34,9 @@ class _AuthState extends State<Auth> {
               decoration: BoxDecoration(
                   color: const Color(0xff2B2738),
                   borderRadius: BorderRadius.circular(ResponsiveValue(context,
-                      defaultValue: 15.0,
+                      defaultValue: 0.0,
                       conditionalValues: [
+                        const Condition.largerThan(name: MOBILE, value: 0.0),
                         const Condition.largerThan(name: TABLET, value: 15.0)
                       ]).value)),
               height: ResponsiveValue(context,
@@ -44,7 +45,7 @@ class _AuthState extends State<Auth> {
                     Condition.smallerThan(
                         name: MOBILE, value: finalSize.height),
                     Condition.largerThan(
-                        name: TABLET, value: finalSize.height * 0.8)
+                        name: TABLET, value: finalSize.height * 0.9)
                   ]).value,
               width: ResponsiveValue(context,
                   defaultValue: finalSize.width,

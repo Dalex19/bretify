@@ -1,8 +1,11 @@
+import 'package:bretify_mvp/features/home/home.dart';
 import 'package:flutter/material.dart';
 
 class With extends StatelessWidget {
   const With({
-    super.key, required this.btnName, required this.subTitle,
+    super.key,
+    required this.btnName,
+    required this.subTitle,
   });
 
   final String btnName;
@@ -22,14 +25,17 @@ class With extends StatelessWidget {
               padding:
                   WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 90)),
             ),
-            onPressed: () {},
-            child:  Text(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Home()));
+            },
+            child: Text(
               btnName,
               style: const TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),
           const SizedBox(height: 10),
-           Row(
+          Row(
             children: [
               const Expanded(child: Skeleton()),
               const SizedBox(width: 15),
